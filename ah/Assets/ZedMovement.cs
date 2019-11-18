@@ -26,11 +26,16 @@ public class ZedMovement : MonoBehaviour
     {
 		//case for zombie moving left, works like a charm
         if(moveX<=0){
+			
 			myRigidbody.velocity = new Vector2( 1f * -moveSpeed, myRigidbody.velocity.y);
+			
+			
 		}
 		else
 		{
 			myRigidbody.velocity = new Vector2( 1f * moveSpeed, myRigidbody.velocity.y);
+
+			
 		}
 		if(gameObject.transform.position.y<-50){
 			transform.gameObject.SetActive(false);
@@ -40,8 +45,8 @@ public class ZedMovement : MonoBehaviour
 			gameObject.transform.position = transform.position;
 			transform.gameObject.SetActive(true);
 		}
-		//anim.SetInteger("moveX",moveX);
-		anim.SetFloat("moveX2", moveX2);
+		anim.SetInteger("moveX",moveX);
+		//anim.SetFloat("moveX2", moveX2);
     }
 
 	
@@ -55,9 +60,10 @@ public class ZedMovement : MonoBehaviour
 			canSpawn=true;
 
 		}
-		if (col.gameObject.tag == "wall")
+		/*if (col.gameObject.tag == "wall")
 		{
+			moveSpeed=moveSpeed*-1;
 			moveX = moveX * -1;
-		}
+		}*/
 	}
 }

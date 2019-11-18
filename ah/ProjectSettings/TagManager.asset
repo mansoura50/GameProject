@@ -12,6 +12,7 @@ TagManager:
   - pits
   - spike
   - Turn
+  - wall
   layers:
   - Default
   - TransparentFX
